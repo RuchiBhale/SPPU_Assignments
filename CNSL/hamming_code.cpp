@@ -104,12 +104,7 @@ class Hamming{
             p3=0;
         }
         else
-            p3=1;
-        
-        
-       
-        
-        
+            p3=1; 
     }
     void cal_p4(int arr[]){
         int i=4;
@@ -119,9 +114,7 @@ class Hamming{
                 cnt++;
                
            }
-            i--;
-           
-            
+            i--;  
         }
         cout<<"count4: "<<cnt<<endl;
         if(cnt%2==0)
@@ -153,15 +146,15 @@ class Hamming{
             else
                 arr[i]=3;
         }
+        cout<<"First Iteration"<<endl;
         calculations(arr);
-        cout<<"1st Iteration"<<endl;
         print();
         arr[4]=p4;
         arr[8]=p3;
         arr[10]=p2;
         arr[11]=p1;
-        calculations(arr);
         cout<<"\nSecond iteration"<<endl;
+        calculations(arr);
         print();
         if(p1==0 && p2==0 && p3==0 && p4==0)
             cout<<"No error"<<endl;
