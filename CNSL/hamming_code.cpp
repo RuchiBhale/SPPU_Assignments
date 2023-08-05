@@ -67,9 +67,11 @@ class Hamming{
                 i--;
                 cnt++;
             }
-        else
+        else{
             i-=2;
             cnt=0;
+        }
+            
             
 
         }
@@ -86,7 +88,7 @@ class Hamming{
         int cnt=0;
         while(i>=0){
             
-            if(count!=3){
+            if(count!=4){
                 if(arr[i]==1){
                     cnt++;
                 }
@@ -94,9 +96,12 @@ class Hamming{
                  count++;
                 
             }
-        else
-            i-=3;
+        else{
+            i-=4;
             count=0;
+
+        }
+            
 
         }
         cout<<"count3: "<<cnt<<endl;
