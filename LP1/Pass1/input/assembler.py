@@ -172,7 +172,7 @@ for line in ipfile:
                 literaltable[ltcnt]=[ltcnt,literal,-1] #as memory is allocated only after LTORG
                 op1code=f"(L,{ltcnt})"
                 ltcnt+=1
-        elif instruct=='DS' or instruct=='DC': #*****added this so that symbol table has value of that LC where the variable is declared using DC DS
+        elif instruct=='DS' or instruct=='DC': 
             symboltable[var][2]=prev
         elif op1 not in condition:
             if op1 in symboltable:
@@ -186,7 +186,7 @@ for line in ipfile:
         if op2.isdigit():
             op2code=f"(C,{op2})"
             # print(op2code)
-        elif instruct=='DS' or instruct=='DC': #*****added this so that symbol table has value of that LC where the variable is declared using DC DS
+        elif instruct=='DS' or instruct=='DC': 
             symboltable[var][2]=prev
        
         elif op2 in registers:
@@ -219,7 +219,7 @@ for literal,[index,lit,val] in literaltable.items():
         prev=curr
         curr+=1
         rel_add.append(prev)
-        literaltable[literal][2]=prev #**** change the RHS from curr to prev
+        literaltable[literal][2]=prev 
         opcode=f"(DL,01)"
         op1code=f"(C,{lit})"
         opfile.write(f"{prev} {opcode} {op1code}\n")
