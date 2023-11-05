@@ -6,7 +6,7 @@ insert into o_emp values(1,'Robin'),(2,'Simran'),(3,'Richard'),(4,'Rohan'),(5,'P
 insert into n_emp values(2,'Simran'),(5,'Pushkar');
 
 /*explicit cursor*/
-create procedure use_cursor1()
+create procedure use_cursor()
 begin
 declare n_name varchar(100);
 declare n_id int;
