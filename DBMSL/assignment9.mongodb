@@ -1,0 +1,34 @@
+/*Insert into Collection*/
+db.MovieReview.insertMany([{title:"Avengers",rating:9.5,review:"Thrilling",actors:['Tom Holland','Tony Stark']},
+{title:"Spider Man Homecoming",rating:8.9,review:"Mesmerizing",actors:['Tom Holland','Zendaya']}]);
+
+/*Show movies of ratings below 9 and having the in the title*/
+ db.MovieReview.find({$and:[{rating:{'$lt':9}},{title:/The/}]});
+
+/*reduce rating by 0.2*/
+db.MovieReview.updateMany({title:'Crash'},{'$inc':{rating:-0.2}});
+
+/*upsert*/
+db.MovieReview.updateOne({title:"Alice in wonderland"},
+{'$set':{rating:7.5,review:'Fascinating',actors:[]}},{upsert:true});
+
+/*$push*/
+db.MovieReview.updateOne({title:'Alice in wonderland'},{$push:{actors:"Johnny Depp"}});
+
+/*pull*/
+db.MovieReview.updateOne({title:'Alice in wonderland'},{$pull:{actors:"Anne Hathaway"}});
+
+/*Movies of Tom Holland*/
+db.MovieReview.aggregate([{$match:{actors:"Tom Holland"}}]);
+
+db.MovieReview.insertOne({title:"Role Models",rating:5.5,review:"Average movie",
+actors:[{name:"William Scott",character:"Danny"},{name:"Paul Rudd",character:"Wheeler"}]});
+
+db.MovieReview.findOne({title:'Role Models'}).actors;
+
+db.MovieReview.findOne({title:'Role Models'}).actors[0];
+
+/*unwind*/
+db.MovieReview.aggregate([{$unwind:'$actors'}]);
+/*Movie which has 'w' in title*/
+db.MovieReview.find({title:/w/});
