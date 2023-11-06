@@ -1,0 +1,22 @@
+ var mapFunction=function(){
+ emit(this.category,this.price);
+};
+var reduceFunction=function(key,values){
+var sum=0;
+ for(var i=0;i<values.length;i++){
+ sum+=values[i];
+ }
+ return sum/values.length;
+ };
+
+ db.Products.mapReduce(mapFunction,reduceFunction,{out:"average_prices",query:{category:"Electronics"}});
+db.Products.mapReduce(mapFunction,reduceFucntion,{out:"average_prices"});
+
+/*Generalized to get sum of all the products*/
+ var mapFunction=function(){
+ emit("total",this.price);
+ };
+var reduceFunction=function(key,values){
+  return Array.sum(values);
+};
+db.Products.mapReduce(mapFunction,reduceFunction,{out:"sum_prices"});
