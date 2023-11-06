@@ -80,6 +80,28 @@ public class assignment8 {
 			System.out.println(e);
 		}
 	}
+	public static void select(String table_name) {
+		try {
+			
+		int roll;
+		String name;
+		System.out.println("|Rollno| Name| ");
+		String sql="select * from "+table_name+";";
+		PreparedStatement ps=con.prepareStatement(sql);
+		ResultSet rs=ps.executeQuery();
+		while(rs.next()) {
+			roll=rs.getInt(1);
+			name=rs.getString(2);
+			String output= "%d %s";
+			System.out.println(String.format(output,roll,name));
+		}
+		
+		}catch(SQLException e) {
+			System.out.println(e);
+			
+		}
+		
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
@@ -93,7 +115,8 @@ public class assignment8 {
 		System.out.println("3.Insert data");
 		System.out.println("4.Update record");
 		System.out.println("5.Delete record");
-		System.out.println("6.Exit");
+		System.out.println("6.Read");
+		System.out.println("7.Exit");
 		
 		ch=sc.nextInt();
 		switch(ch) {
@@ -123,6 +146,9 @@ public class assignment8 {
 			deletion(table_name,roll_no);
 			break;
 		case 6:
+			select(table_name);
+			break;
+		case 7:
 			System.out.println("Exit");
 			break;
 		
