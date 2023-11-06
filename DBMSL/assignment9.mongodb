@@ -32,3 +32,6 @@ db.MovieReview.findOne({title:'Role Models'}).actors[0];
 db.MovieReview.aggregate([{$unwind:'$actors'}]);
 /*Movie which has 'w' in title*/
 db.MovieReview.find({title:/w/});
+
+db.MovieReview.aggregate([{$match:{title:"Spider Man Homecoming"}},
+{$project:{castsize:{'$size':'$actors'}}}]);
