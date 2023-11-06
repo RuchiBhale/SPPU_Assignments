@@ -1,0 +1,31 @@
+/*Top 3 movies*/
+db.MovieReview.aggregate([{$sort:{rating:-1}},{$limit:3}]);
+
+db.MovieReview.aggregate([{$project:{_id:0,title:1,rating:1}},{$limit:5}]);
+
+db.Products.insertMany([{ name: 'Laptop', category: 'Electronics', price: 80000, attribute: { color: 'white', weight: '2pounds' }, features: ['16GB RAM', 'Intel core'], 
+reviews: [{ user: 'amit', rating: 9 },{ user: 'sumit', rating: 8 }] }, 
+{ name: 'Smartphone', category: 'Electronics', price: 56000, attributes: { color: 'blue', weight: '200g' }, features: ['128GB memory', 'Google assistance'], 
+reviews: [{ user: 'riya', rating: 7 }, { user: 'rhea', rating: 9 }] }]);
+
+db.Products.insertOne({name:'Bookshelf',category:'Furniture',price:25000,
+attributes:{color:'black',weight:'5kgs'},
+features:['12 small shelves','2 drawers'],
+reviews:[{user:'Ruchi',rating:10},{user:'Aarti',rating:8}]})
+
+/*sum category wise*/
+db.Products.aggregate([{$group:{_id:'$category',sum:{'$sum':'$price'}}}]);
+
+db.Products.aggregate([{$match:{price:{$lt:25000}}}]);
+/*to skip the first two documents*/
+db.Products.aggregate([{$skip:2}]);
+
+db.Products.aggregate([{$group:{_id:'$category',avgprice:{$avg:'$price'}}}]);
+
+db.Products.aggregate([{$project:{_id:0,name:1,price:1,no_of_reviews:{$size:'$reviews'}}}]);
+
+db.Products.aggregate([{$group:{_id:'$category',maxPrice:{'$max':'$price'}}}]);
+
+db.Products.createIndex({name:1,price:-1});
+
+db.Products.createIndex({name:1});
