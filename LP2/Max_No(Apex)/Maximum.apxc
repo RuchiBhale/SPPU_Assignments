@@ -4,14 +4,14 @@ public class Maximum {
     public integer thirdno{get;set;}
     public integer maxno{get;set;}
     public void calculate_max(){
-    if((firstno>=secondno) && (firstno>=thirdno)){
-        maxno=firstno;    
+    if((firstno >= secondno) && (firstno >= thirdno)){
+        maxno = firstno;    
     }
-    else if((secondno>=firstno) &&(secondno>=thirdno)){
-        maxno=secondno;  
+    else if((secondno >= firstno) &&(secondno >= thirdno)){
+        maxno = secondno;  
     }
     else{
-        maxno=thirdno;
+        maxno = thirdno;
             
      }
     }
