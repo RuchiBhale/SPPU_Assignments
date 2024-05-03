@@ -12,10 +12,7 @@
             </apex:column>
             <apex:column headerValue="Marks">
                 <apex:inputText value="{!subject.marks}" label="{!subject.name}" html-placeholder="{!subject.name}"/>
-            
-     
-            </apex:column>
-            	
+            </apex:column>	
             </apex:pageBlockTable>
             <apex:pageBlockSection> 
             <apex:outputText label="Total" value="{!sum}" id="res"></apex:outputText>
