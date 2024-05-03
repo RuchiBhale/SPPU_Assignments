@@ -26,10 +26,10 @@ public class Marksheet {
         
     }
     public void calculate_percentage(){
-        if(sum>0){
+        
             percentage=(sum/subjectmarks.size() * 100) /100;
             
-        }
+        
         
     }
 }
