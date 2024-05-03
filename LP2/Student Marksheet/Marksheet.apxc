@@ -1,9 +1,9 @@
 public class Marksheet {
-    public List<SubjectMarks> subjectmarks{get;set;}
+    public List<SubjectMarks> subjectmarks{get;set;} //similar to Job j
     public double sum{get;set;}
     public double percentage{get;set;}
     public Marksheet(){
-        subjectmarks=new List<SubjectMarks>();
+        subjectmarks=new List<SubjectMarks>(); //similar to j=new Job[]
         subjectmarks.add(new SubjectMarks('English'));
         subjectmarks.add(new SubjectMarks('Maths'));
         subjectmarks.add(new SubjectMarks('Science'));
