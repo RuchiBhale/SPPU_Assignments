@@ -1,0 +1,26 @@
+<apex:page controller="Marksheet">
+    <apex:sectionHeader title="Marksheet" subtitle="Marks"/>
+    <apex:form>
+        <apex:pageBlock title="Report Card">
+        <apex:pageBlockButtons>
+            <apex:commandButton value="Total" action="{!calculate_sum}" reRender="res"/>
+            <apex:commandButton value="Percentage" action="{!calculate_percentage}" reRender="res1"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockTable value="{!subjectmarks}" var="subject">
+            <apex:column headerValue="Subject">
+                <apex:outputText value="{!subject.name}"/>
+            </apex:column>
+            <apex:column headerValue="Marks">
+                <apex:inputText value="{!subject.marks}" label="{!subject.name}" html-placeholder="{!subject.name}"/>
+            
+     
+            </apex:column>
+            	
+            </apex:pageBlockTable>
+            <apex:pageBlockSection> 
+            <apex:outputText label="Total" value="{!sum}" id="res"></apex:outputText>
+            <apex:outputText label="Percentage" value="{!percentage}" id="res1"></apex:outputText>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

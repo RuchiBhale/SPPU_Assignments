@@ -1,0 +1,35 @@
+public class Marksheet {
+    public List<SubjectMarks> subjectmarks{get;set;}
+    public double sum{get;set;}
+    public double percentage{get;set;}
+    public Marksheet(){
+        subjectmarks=new List<SubjectMarks>();
+        subjectmarks.add(new SubjectMarks('English'));
+        subjectmarks.add(new SubjectMarks('Maths'));
+        subjectmarks.add(new SubjectMarks('Science'));
+        subjectmarks.add(new SubjectMarks('SST'));
+        subjectmarks.add(new SubjectMarks('Computer'));
+    }
+    public class SubjectMarks{
+        public String name{get;set;}
+        public integer marks{get;set;}
+        public SubjectMarks(String name){
+            this.name=name;
+           
+        }
+    }
+    public void calculate_sum(){
+       sum=0;
+        for(SubjectMarks subject:subjectmarks){
+            sum+=subject.marks;
+        }
+        
+    }
+    public void calculate_percentage(){
+        if(sum>0){
+            percentage=(sum/subjectmarks.size() * 100) /100;
+            
+        }
+        
+    }
+}
