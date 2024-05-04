@@ -7,8 +7,8 @@ public class ElectricityBill {
             '>500' => 11.86
         };
         System.debug('Units'+' : '+'Rate per unit in Rs');
-		for(String rate : rates.keySet()) {
-            System.debug(rate + ' : ' + rates.get(rate));
+		for(String unit : rates.keySet()) {
+            System.debug(unit + ' : ' + rates.get(unit));
         }
         double amount=0;
         if(units > 0 && units <= 100){
