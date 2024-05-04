@@ -1,4 +1,4 @@
-#### To execute in anonymous window
+#### To execute anonymous window
 
 TempConvert t = new TempConvert();
 
