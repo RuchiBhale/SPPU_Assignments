@@ -1,0 +1,34 @@
+public class CurrencyConverter {
+    public double convertedcurr{get;set;}
+    public String fromcurrency{get;set;}
+    public String tocurrency{get;set;}
+    public double amount{get;set;}
+    public List<SelectOption> getdynamiclist() {
+        List<SelectOption> options = new List<SelectOption>();
+        options.add(new SelectOption('INR','INR'));
+        options.add(new SelectOption('USD','USD'));
+        options.add(new SelectOption('Pound','Pound'));
+        
+        return options;
+    }
+    public void convertCurrency(){
+        Map<String,Double> conversionrate=new Map<String,Double>{
+            'INR-USD' => 0.012,
+            'USD-INR' => 83.38,
+            'INR-Pound' => 0.0096,
+            'Pound-INR' => 104.63,
+            'USD-Pound' => 0.80,
+            'Pound-USD' => 1.25
+            
+        };
+        String conversionkey=fromcurrency+'-'+tocurrency;
+        //key to extract the conversion rate from map
+        if(conversionrate.containsKey(conversionkey)){
+            //calculate the converted currency
+            convertedcurr=amount * conversionrate.get(conversionkey);
+        }else{
+            System.debug('Conversion rate not found :( Select another currency!');
+        }
+        
+    }
+}
