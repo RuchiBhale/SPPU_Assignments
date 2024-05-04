@@ -1,0 +1,8 @@
+public class TempConversion {
+    public double celsius{get;set;}
+    public double fahrenheit{get;set;}
+    
+    public void convert(){
+        fahrenheit = (1.8 * celsius) + 32;
+    }
+}
