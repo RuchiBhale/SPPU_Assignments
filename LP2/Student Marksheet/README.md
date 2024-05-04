@@ -1,4 +1,4 @@
-### To run Apex file without vfp
+### To run Apex file 
 
 Marksheet m = new Marksheet();
 
@@ -10,6 +10,6 @@ Map<String,Integer>marks = new Map<String,Integer>{
     'Computers' => 100
 };
 
-m.calculate_result(marks);
+m.calculate_result('Ruchi Bhale',marks);
 
 Paste the above in execute anonymous window
