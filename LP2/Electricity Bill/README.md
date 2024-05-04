@@ -1,4 +1,4 @@
-#### To execute in anonymous window
+#### To execute anonymous window
 
 ElectricityBill e = new ElectricityBill();
 
