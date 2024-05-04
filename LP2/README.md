@@ -1,9 +1,13 @@
-Q1) Implement depth first search algorithm and Breadth first search algorithm, 
-    <br/>use an undirected graph and develop a recursive algorithm 
-    <br/>for searching all the vertices of a graph or a tree data structure.
+#CC Assignments
+1. Create following application in SalesForce.com using Apex Programming Language:
+   i.  Mathematical Calculator
+   ii. Generate student mark sheet
+   
+2. Create following application in SalesForce.com using Apex Programming Language: 
+    To find greatest among three numbers
+   
+3. Create following application in SalesForce.com using Apex Programming Language:
+   i.  For a given unit generate or calculate electricity bill
+   ii.  To convert degree Celsius to Fahrenheit
 
-
-Q2) Implement A star algorithm for any game search problem
-
-
-Q3) Implement Greedy search algorithm for Job Scheduling Problem
+4. Create an application of currency converter in SalesForce.com using Apex Programming Language
