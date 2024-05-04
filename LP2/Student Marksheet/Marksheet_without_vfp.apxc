@@ -1,0 +1,17 @@
+public class Marksheet {
+    
+    public void calculate_result(Map<String, Integer> subjectMarks) {
+        System.debug('Subject-wise Marks:');
+        for(String subject : subjectMarks.keySet()) {
+            System.debug(subject + ': ' + subjectMarks.get(subject));
+        }
+        
+        double sum = 0;
+        for(Integer mark : subjectMarks.values()) {
+            sum += mark;
+        }
+        System.debug('Total Marks are: ' + sum);
+        System.debug('Percentage: ' + (sum / subjectMarks.size()));
+    }
+    
+}
