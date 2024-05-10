@@ -9,6 +9,7 @@
    
 3. Create following application in SalesForce.com using Apex Programming Language:
    i.  For a given unit generate or calculate electricity bill
+
    ii.  To convert degree Celsius to Fahrenheit
 
-4. Create an application of currency converter in SalesForce.com using Apex Programming Language
+5. Create an application of currency converter in SalesForce.com using Apex Programming Language
